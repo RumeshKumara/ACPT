@@ -1,0 +1,14 @@
+div {
+    width: 100px;
+    height: 100px;
+    background-color: rgb(8, 0, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    position: absolute; 
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;   
+}

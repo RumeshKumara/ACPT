@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign In</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <form action="/submit-signin" method="post">
+      <img src="/day-1/exercise/user.png" alt="" width="40" />
+      <h2>Sign In</h2>
+
+      <input
+        type="text"
+        id="username"
+        name="username"
+        class="in"
+        placeholder="Type Your Username"
+      />
+      <br />
+      <input
+        class="in"
+        type="password"
+        id="password"
+        name="password"
+        placeholder="Type Your Password"
+      />
+      <br />
+      <button type="submit">Sign In</button><br />
+      <div class="pw">
+        <input type="checkbox" id="rememberme" name="rememberme" />
+        <label for="rememberme">Remember Me</label>&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="">Forgot Password?</a>
+      </div>
+      <div class="footer">
+        <p>Not a Member?<a href="">create an account</a></p>
+      </div>
+    </form>
+  </body>
+</html>

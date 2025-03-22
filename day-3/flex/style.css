@@ -1,0 +1,59 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.container-reverse {
+    display: flex;
+    flex-direction: row-reverse; 
+    flex-wrap: wrap-reverse;
+    gap: 10px;
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: #21013b; 
+    color: white; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+}
+.column {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.column-reverse {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 10px;
+}
+
+.container-column{
+    display: flex;
+    gap: 20px;
+    
+}
+
+.container-justify{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.container-space-evenly{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.container-space-around{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}

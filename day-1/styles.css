@@ -1,0 +1,93 @@
+/* * {
+  margin: 0;
+  padding: 0;
+} */
+body {
+  background-color: rgb(255, 255, 255);
+  text-align: center;
+  
+}
+
+.btn {
+  background-color: #4CAF50; 
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  margin: 20px 0;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.4);
+}
+
+#example-id {
+  color: blue;
+  font-size: 20px;
+}
+
+#example-id > p {
+  color: red;
+  font-size: 22px;
+}
+
+.example-class {
+  background-color: yellow;
+  padding: 10px;
+}
+
+.example-class > span {
+  background-color: lightblue;
+  padding: 5px;
+}
+
+p {
+  color: green;
+  font-size: 18px;
+}
+.child-1 > h2 {
+    color: purple;
+    font-size: 24px;
+ }
+ .child-1  {
+    background-color: lightpink;
+    padding: 20px;
+ }
+
+.br {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.border-solid {
+  border: 2px solid red;
+}
+
+.border-dashed {
+  border: 2px dashed green;
+}
+
+.border-dotted {
+  border: 2px dotted blue;
+}
+
+.border-double {
+  border: 4px double purple;
+}
+
+.border-groove {
+  border: 4px groove orange;
+}
+
+.border-ridge {
+  border: 4px ridge pink;
+}
+
+.border-inset {
+  border: 4px inset brown;
+}
+
+.border-outset {
+  border: 4px outset gray;
+}

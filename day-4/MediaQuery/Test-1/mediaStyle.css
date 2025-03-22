@@ -1,0 +1,52 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: aliceblue;
+    font-family: Arial, sans-serif;
+}
+
+button{
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    transition: background-color 0.3s ease-in-out;
+    background-color: blueviolet;
+    color: white;
+    border-radius: 10px;
+    margin-left: 10px;
+}
+
+h1{
+    background-color: blue;
+    text-align: center;
+    padding: 15px;
+}
+
+@media only screen and (max-width: 768px){
+    h1{
+        background-color: rgb(138, 177, 0);
+    }
+    
+}
+
+@media only screen and (max-width: 425px){
+    h1{
+        background-color: rgb(162, 1, 165);
+    }
+    
+}
+
+@media only screen and (max-width: 325px){
+    h1{
+        background-color: red;
+    }
+    
+}
+@media only screen and (min-width: 426px) and (max-width: 768px){
+    button{
+        display: none;
+    }
+    
+}

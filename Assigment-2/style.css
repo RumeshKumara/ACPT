@@ -1,0 +1,153 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-image: url(assets/unblured.jpeg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+}
+
+.sidebar {
+    width: 200px;
+    position: absolute;
+    background: rgba(255, 255, 255, 0.1);
+    height: 54rem;
+    left: 1%;
+    top: 80px;
+    border-radius: 10px;
+    padding-top: 20px;
+}
+
+.nav-btn {
+    width: 70%;
+    padding: 10px;
+    margin: 10px 0;
+    margin-left: 30px;
+    background: #BD9292;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+
+
+.top-bar {
+    position: sticky;
+    width: 98%;
+    height: 60px;
+    margin-top: 8px;
+    top: 0;
+    left: 1%;
+    background: #BD9292;
+    align-items: center;
+    border-radius: 10px;
+    z-index: 2;
+}
+
+.logo img {
+    width: 40px;
+    position: absolute;
+    left: 20px;
+    top: 8px;
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+    margin-left: 200px;
+}
+
+.about {
+    background: transparent;
+    padding: 20px;
+    position: absolute;
+    width: 80%;
+    height: 110%;
+    top: 80px;
+    left: 16%;
+    color: #ffffff;
+    border-radius: 10px 10px 0 0;
+    border: 1px solid #ffffff;
+}
+
+.about .chart {
+    margin-top: 80px;
+}
+.chart-container {
+    position: relative;
+    height: 200px;
+}
+
+.box {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+}
+.box p {
+    color: white;
+    text-align: center; 
+    font-size: 12px;
+    margin-top: 30px;
+}
+
+.purple {
+    position: absolute;
+    background: #7758CF;
+}
+.pink {
+    position: absolute;
+    background: #E09191; 
+    top: 100px;
+    left: 100px;
+}
+.yellow {
+    position: absolute;
+    background: #D7AB53;
+    top: 200px;
+    left: 200px;
+    z-index: 2;
+    
+}
+
+.green {
+    position: absolute;
+    background: #63BE92;
+    top: 100px;
+    left: 300px;
+    z-index: 1;
+}
+.light-purple {
+    position: absolute;
+    background: #A58AC8;
+    left: 400px;
+}
+
+
+.footer {
+    background: rgba(200, 150, 150, 1);
+    text-align: center;
+    position: absolute;
+    bottom: -330px;
+    padding: 15px;
+    width: 81%;
+    height: 110px;
+    border-radius: 0 0 10px 10px;
+    
+
+
+}
+.footer h5 {
+    color: #ffffff;
+    text-align: center;
+}
+
+.call {
+    width: 40px;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 2;
+}
