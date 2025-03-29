@@ -279,6 +279,15 @@ header ul li a{
     }
 }
 
+@media only screen and (max-width: 363px) {
+    .topic h2{
+        font-size: 20px;
+        letter-spacing: 2px;
+        text-align: center;
+    }
+
+}
+
 /* About Section */
 
 .topic p{
@@ -326,6 +335,7 @@ header ul li a{
 .about-us{
     display: flex;
     justify-content: space-around;
+    align-items: center;
     gap: 30px;
     padding: 20px;  
 }
