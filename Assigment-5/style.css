@@ -7,7 +7,7 @@
 
 body {
     height: 100vh;
-    display: flex;
+    position: relative;
     justify-content: center;
     align-items: center;
     background-color: #f0f2f5;
@@ -22,10 +22,13 @@ body {
 
 /* Left Section: Login Form */
 .login-section {
-    flex: 1;
-    padding: 40px;
+    position: absolute;
+    left: 0;
+    width: 43%;
+    height: 100%;
+    padding: 80px;
     z-index: 3; 
-    border-radius: 0 20px 20px 0;
+    border-radius: 0 30px 30px 0;
     background-color: #fff;
     display: flex;
     flex-direction: column;
@@ -59,20 +62,38 @@ form{
 
 .input-group input {
     width: 100%;
-    padding: 15px;
+    height: 100%;
+    padding: 18px;
+    color: #595959;
     border: none;
     background-color: #F1F1F1;
-    border-radius: 5px;
+    border-radius: 14px;
     font-size: 12px;
     outline: none;
     font-weight: 200;
 }
 
 .input-group input:focus {
-    border-color: #ff5733;
+    border: 1px solid #FF451C;
 }
 
+.input-group label {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    font-size: 14px;
+    color: #919191;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
 
+.input-group input:focus + label,
+.input-group input:not(:placeholder-shown) + label {
+    top: 8px; /* Adjusted to stay within the input field */
+    font-size: 10px; /* Small enough to fit but still readable */
+    color: #858585;
+}
 
 .eye-icon {
     position: absolute;
@@ -112,7 +133,7 @@ form{
 
 .sign-in-btn {
     width: 100%;
-    padding: 12px;
+    padding: 18px;
     background-color: #FF451C;
     color: #fff;
     border: none;
@@ -152,7 +173,7 @@ form{
 
 .google-sign-in {
     width: 100%;
-    padding: 12px;
+    padding: 18px;
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 14px;
@@ -192,32 +213,52 @@ form{
 
 /* Right Section: Background Image */
 .image-section {
-    flex: 2;
+    position: absolute;
+    right: 0;
+    width: 60%;
+    height: 100%;
     background-image: url(assets/image.png);
     background-size: cover;
+    object-fit: cover;
     background-position: center;
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 1160px){
+    .login-section {
+        padding: 35px;
+    }
+
+}
+@media (max-width: 750px) {
     .container {
         flex-direction: column;
         width: 100vw; /* Full width of the viewport */
-        height: 100vh; /* Full height of the viewport */
+        height: 100vh; /* Allow height to adjust dynamically */
     }
 
     .login-section {
         position: absolute;
         display: flex;
         flex-direction: column;
-        top: 20px;
+        justify-content: space-between;
+        top: 0;
         width: 100%;
-        height: 100%;
-        background: transparent; 
-        padding: 20px; 
-        border-radius: 0; 
+        height: 100%; /* Adjust height dynamically */
+        background: transparent; /* Ensure visibility */
+        padding: 40px;
+        border-radius: 0;
     }
    
+    .login-section .logo .mobile-logo{
+        display: block;
+        width: 60px; /* Adjust logo size for smaller screens */
+        height: 60px;
+    }
+    .login-section h2{
+        color: #fff;
+    }
+
     .input-group input {
         width: 100%;
         padding: 15px;
@@ -225,12 +266,23 @@ form{
         background-color: rgba(255, 255, 255, 0.4);
         border-radius: 14px;
         font-size: 12px;
-        color: #fff;
+        color: #f0f0f0;
         outline: none;
         font-weight: 200;
     }
     .input-group input:focus {
-        border-color: #ff5733;
+        border: 1px solid #f3f3f3;
+    }
+    .input-group label {
+        color: #ffffff;
+    }
+    
+    .input-group input:focus + label,
+    .input-group input:not(:placeholder-shown) + label {
+        top: 5px; /* Adjusted to stay within the input field */
+        font-size: 10px; /* Small enough to fit but still readable */
+        color: #ffffff;
+        
     }
     .eye-icon {
         position: absolute;
@@ -243,34 +295,17 @@ form{
     .input-group input::placeholder {
         color: #e9e9e9; 
     }
-    
 
-    .logo img {
-        width: 30px; /* Scale down logo */
-        height: 30px;
-        display: none;
-    }
-    .logo .mobile-logo{
-        display: block;
-        width: 60px; /* Scale down logo */
-        height: 60px;
-        margin-top: 20px;
-    }
-
-    h2 {
-        font-size: 18px; /* Adjust font size */
-        color: #f8f8f8;
-    }
-
-
-    .input-group input {
-        padding: 15px; 
-        font-size: 14px; 
+    .input-group input:focus + label,
+    .input-group input:not(:placeholder-shown) + label {
+        top: 8px; /* Ensure label stays within input */
+        font-size: 10px;
     }
 
     .options {
-        flex-direction: flex;
-        gap: 10px; 
+        flex-direction: row; /* Stack options vertically */
+        gap: 10px;
+        align-items: flex-start; /* Align options to the left */
     }
     .options label {
         display: flex;
@@ -280,14 +315,19 @@ form{
     }
     
     .options input[type="checkbox"] {
-        background-color: transparent; 
+        
+        appearance: none;
         border: 1px solid #ffffff; 
+        border-radius: 4px;
         width: 16px; 
         height: 16px;
     }
 
     .options input[type="checkbox"]:checked {
-        background-color: rgba(255, 255, 255, 0.5);
+        background-color: #ffffff;
+
+        accent-color: rgba(237, 6, 6, 0.5);
+
     }
 
     .forgot-password {
@@ -298,28 +338,26 @@ form{
     }
 
     .sign-in-btn {
-        padding: 15px;
-        font-size: 14px; 
+        padding: 12px;
+        font-size: 14px;
     }
 
     .divider {
-        margin: 15px 0; /* Reduce margin */
+        margin: 10px 0; /* Reduce margin for smaller screens */
     }
     .divider span {
-        background-color: rgba(254, 254, 254, 0);
+        background-color: #2f0b1d;
         padding: 0 10px;
         color: #ffffff;
         font-size: 14px;
     }
-    
 
     .google-sign-in {
-        padding: 15px; /* Adjust padding */
+        padding: 12px;
         font-size: 14px;
+        background: transparent;
         color: #fff;
-        background: transparent; /* Adjust font size */
     }
-
     .signup-link {
         margin-top: 30px; /* Reduce top margin */
         font-size: 12px;
@@ -331,7 +369,15 @@ form{
 
     .image-section {
         position: relative;
-        height: 200px; 
+        width: 100%; /* Full width for smaller screens */
+        height: 100%; /* Adjust height */
+        background-size: cover;
         background-position: center;
     }
+}
+@media (max-width: 425px){
+    .login-section {
+        padding: 20px;
+    }
+
 }
