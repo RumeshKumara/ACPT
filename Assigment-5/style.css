@@ -15,11 +15,8 @@ body {
 
 .container {
     display: flex;
-    width: 100%;
-    max-width: 1200px;
-    height: 600px;
-    margin: 0 auto; /* Center the container */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100vw; /* Full width of the viewport */
+    height: 100vh; 
     overflow: hidden;
 }
 
@@ -27,46 +24,55 @@ body {
 .login-section {
     flex: 1;
     padding: 40px;
-    z-index: 3; /* Ensure it appears above the image */
-    /* Removed transform to fix the gap */
+    z-index: 3; 
     border-radius: 0 20px 20px 0;
     background-color: #fff;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
 }
 
 .logo img {
     width: 40px;
     height: 40px;
-    margin-bottom: 20px;
+}
+.logo .mobile-logo{
+    display: none;
 }
 
 h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
-    color: #333;
+    font-size: 20px;
+    font-weight: 200;
+    color: #FF451C;
+}
+form{
+    width: 100%;
+    margin-top: 40px;
 }
 
 .input-group {
     width: 100%;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     position: relative;
 }
 
 .input-group input {
     width: 100%;
-    padding: 12px;
-    border: 1px solid #ddd;
+    padding: 15px;
+    border: none;
+    background-color: #F1F1F1;
     border-radius: 5px;
-    font-size: 16px;
+    font-size: 12px;
     outline: none;
+    font-weight: 200;
 }
 
 .input-group input:focus {
     border-color: #ff5733;
 }
+
+
 
 .eye-icon {
     position: absolute;
@@ -81,19 +87,23 @@ h2 {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     font-size: 14px;
 }
 
 .options label {
     display: flex;
+    gap: 5px;
     align-items: center;
     color: #666;
+    font-size: 12px;
 }
 
 .forgot-password {
-    color: #ff5733;
+    color: #666;
     text-decoration: none;
+    font-size: 12px;
+
 }
 
 .forgot-password:hover {
@@ -103,10 +113,10 @@ h2 {
 .sign-in-btn {
     width: 100%;
     padding: 12px;
-    background-color: #ff5733;
+    background-color: #FF451C;
     color: #fff;
     border: none;
-    border-radius: 5px;
+    border-radius: 14px;
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s;
@@ -119,12 +129,11 @@ h2 {
 .divider {
     width: 100%;
     text-align: center;
-    margin: 20px 0;
     position: relative;
 }
 
 .divider span {
-    background-color: #fff;
+    background-color: #ffffff;
     padding: 0 10px;
     color: #888;
     font-size: 14px;
@@ -146,7 +155,7 @@ h2 {
     padding: 12px;
     background-color: #fff;
     border: 1px solid #ddd;
-    border-radius: 5px;
+    border-radius: 14px;
     font-size: 16px;
     display: flex;
     align-items: center;
@@ -166,13 +175,14 @@ h2 {
 }
 
 .signup-link {
-    margin-top: 20px;
+    margin-top: 60px;
     font-size: 14px;
     color: #666;
 }
 
 .signup-link a {
-    color: #ff5733;
+    color: #434343;
+    font-weight: 600;
     text-decoration: none;
 }
 
@@ -192,15 +202,136 @@ h2 {
 @media (max-width: 768px) {
     .container {
         flex-direction: column;
-        height: auto;
+        width: 100vw; /* Full width of the viewport */
+        height: 100vh; /* Full height of the viewport */
     }
 
-    .login-section, .image-section {
-        flex: none;
+    .login-section {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        top: 20px;
         width: 100%;
+        height: 100%;
+        background: transparent; 
+        padding: 20px; 
+        border-radius: 0; 
+    }
+   
+    .input-group input {
+        width: 100%;
+        padding: 15px;
+        border: none;
+        background-color: rgba(255, 255, 255, 0.4);
+        border-radius: 14px;
+        font-size: 12px;
+        color: #fff;
+        outline: none;
+        font-weight: 200;
+    }
+    .input-group input:focus {
+        border-color: #ff5733;
+    }
+    .eye-icon {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #ffffff;
+        cursor: pointer;
+    }
+    .input-group input::placeholder {
+        color: #e9e9e9; 
+    }
+    
+
+    .logo img {
+        width: 30px; /* Scale down logo */
+        height: 30px;
+        display: none;
+    }
+    .logo .mobile-logo{
+        display: block;
+        width: 60px; /* Scale down logo */
+        height: 60px;
+        margin-top: 20px;
+    }
+
+    h2 {
+        font-size: 18px; /* Adjust font size */
+        color: #f8f8f8;
+    }
+
+
+    .input-group input {
+        padding: 15px; 
+        font-size: 14px; 
+    }
+
+    .options {
+        flex-direction: flex;
+        gap: 10px; 
+    }
+    .options label {
+        display: flex;
+        gap: 5px;
+        align-items: center;
+        color: #ffffff;
+    }
+    
+    .options input[type="checkbox"] {
+        background-color: transparent; 
+        border: 1px solid #ffffff; 
+        width: 16px; 
+        height: 16px;
+    }
+
+    .options input[type="checkbox"]:checked {
+        background-color: rgba(255, 255, 255, 0.5);
+    }
+
+    .forgot-password {
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 12px;
+    
+    }
+
+    .sign-in-btn {
+        padding: 15px;
+        font-size: 14px; 
+    }
+
+    .divider {
+        margin: 15px 0; /* Reduce margin */
+    }
+    .divider span {
+        background-color: rgba(254, 254, 254, 0);
+        padding: 0 10px;
+        color: #ffffff;
+        font-size: 14px;
+    }
+    
+
+    .google-sign-in {
+        padding: 15px; /* Adjust padding */
+        font-size: 14px;
+        color: #fff;
+        background: transparent; /* Adjust font size */
+    }
+
+    .signup-link {
+        margin-top: 30px; /* Reduce top margin */
+        font-size: 12px;
+        color: #fff;
+    }
+    .signup-link a {
+        color: #ffffff;
     }
 
     .image-section {
-        height: 300px;
+        position: relative;
+        height: 200px; 
+        background-position: center;
     }
 }
