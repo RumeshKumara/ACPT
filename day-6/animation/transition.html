@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Transitions and Animations</title>
+    <style>
+      /* General styling */
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+        padding: 20px;
+        background-color: #f0f0f0;
+      }
+
+      /* --- TRANSITION EXAMPLE --- */
+      .transition-box {
+        width: 100px;
+        height: 100px;
+        background-color: #3498db;
+        border-radius: 10px;
+        /* Transition properties */
+        transition: all 0.5s ease; /* Applies to all properties, 0.5s duration, ease timing */
+      }
+
+      /* Hover state for transition */
+      .transition-box:hover {
+        width: 150px; /* Expands width */
+        height: 150px; /* Expands height */
+        background-color: #e74c3c; /* Changes color */
+        transform: rotate(45deg); /* Rotates 45 degrees */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Adds shadow */
+      }
+
+      /* --- ANIMATION EXAMPLE --- */
+      .animation-box {
+        width: 100px;
+        height: 100px;
+        background-color: #2ecc71;
+        border-radius: 50%; /* Makes it a circle */
+        position: relative;
+        /* Animation properties */
+        animation: bounce 2s infinite; /* Name, duration, repeats forever */
+      }
+
+      /* Keyframes for the bounce animation */
+      @keyframes bounce {
+        0% {
+          top: 0;
+          transform: scale(1); /* Normal size */
+        }
+        50% {
+          top: -50px; /* Moves up */
+          transform: scale(1.2); /* Slightly larger */
+          background-color: #f1c40f; /* Color change */
+        }
+        100% {
+          top: 0; /* Back to start */
+          transform: scale(1); /* Normal size */
+        }
+      }
+
+      /* --- COMBINED EXAMPLE (Transition + Animation) --- */
+      .combo-box {
+        width: 120px;
+        height: 120px;
+        background-color: #9b59b6;
+        border-radius: 15px;
+        position: relative;
+        /* Animation runs continuously */
+        animation: slide 3s infinite ease-in-out;
+        /* Transition for hover effect */
+        transition: transform 0.3s ease, background-color 0.3s ease;
+      }
+
+      .combo-box:hover {
+        transform: scale(1.1); /* Scales up on hover */
+        background-color: #e91e63; /* Color change on hover */
+      }
+
+      /* Keyframes for slide animation */
+      @keyframes slide {
+        0% {
+          left: 0;
+        }
+        50% {
+          left: 100px; /* Moves right */
+        }
+        100% {
+          left: 0; /* Back to start */
+        }
+      }
+
+      /* Styling for labels */
+      h2 {
+        color: #333;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Transition Example -->
+    <div>
+      <h2>Transition Box (Hover Me)</h2>
+      <div class="transition-box"></div>
+    </div>
+
+    <!-- Animation Example -->
+    <div>
+      <h2>Animation Box (Bouncing)</h2>
+      <div class="animation-box"></div>
+    </div>
+
+    <!-- Combined Example -->
+    <div>
+      <h2>Combo Box (Sliding + Hover)</h2>
+      <div class="combo-box"></div>
+    </div>
+  </body>
+</html>
