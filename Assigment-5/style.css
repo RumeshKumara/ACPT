@@ -90,8 +90,8 @@ form{
 
 .input-group input:focus + label,
 .input-group input:not(:placeholder-shown) + label {
-    top: 8px; /* Adjusted to stay within the input field */
-    font-size: 10px; /* Small enough to fit but still readable */
+    top: 10px; 
+    font-size: 10px; 
     color: #858585;
 }
 
