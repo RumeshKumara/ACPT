@@ -1,7 +1,10 @@
 function startQuiz() {
     const nameInput = document.getElementById("name").value;
     const navName = document.getElementById("navName");
-    navName.textContent = nameInput || "Guest";
+    if (!nameInput) {
+        alert("Please enter your name!");
+        return;
+    }
     navName.style.color = "green";
     navName.style.fontSize = "20px";
     navName.style.fontWeight = "bold";
@@ -161,10 +164,15 @@ function startQuiz() {
     function displayResult() {
         const mainContent = document.querySelector("main");
         mainContent.innerHTML = `
+            <div class="flex flex-col">
             <div class="bg-[#cbfcce] rounded-3xl p-8 w-full max-w-md flex flex-col gap-6">
                 <h2 class="text-center text-2xl font-semibold text-green-700">Quiz Completed</h2>
                 <p class="text-center text-lg">Correct Answers: ${correctAnswers}</p>
                 <p class="text-center text-lg">Wrong Answers: ${wrongAnswers}</p>
+            </div>
+            <div class="text-center mt-4">
+                <button type="button" class="bg-green-500 text-white py-2 rounded-lg w-25 hover:bg-green-600" onclick="location.reload()">Restart Quiz</button>
+            </div>
             </div>
         `;
     }
